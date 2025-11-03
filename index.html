@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>潍坊风筝工艺非遗文化</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kiteRed: '#c53030',
+            kiteBlack: '#1a202c',
+            kiteBg: '#F5F4F0',
+            kiteTextBg: 'rgba(232, 236, 230, 0.8)',
+            headerBg: '#E8E4D8'
+          },
+          fontFamily: {
+            kai: ['KaiTi', 'STKaiti', 'serif'],
+            xing: ['Xingkai', 'STXingkai', 'serif']
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
+      .vertical-text-normal {
+        writing-mode: vertical-rl;
+      }
+      .scroll-snap {
+        scroll-snap-type: y mandatory;
+      }
+      .scroll-snap > div {
+        scroll-snap-align: start;
+      }
+    }
+  </style>
+</head>
+
+<body class="relative min-w-[320px] max-w-[640px] h-screen mx-auto overflow-hidden p-0 m-0">
+  <!-- 静态背景层（移除动态效果） -->
+  <div class="fixed inset-0 z-0">
+    <div class="absolute inset-0 bg-kiteBg z-10"></div>
+  </div>
+
+  <!-- 顶部导航（使用深色背景） -->
+  <header class="fixed top-0 left-0 right-0 z-30 h-[60px] flex items-center justify-between px-4 border-b border-gray-300 bg-headerBg/60 backdrop-blur-sm">
+    <button class="text-gray-700 focus:outline-none">
+      <i class="fa fa-angle-left text-xl"></i>
+    </button>
+    <h1 class="text-[clamp(1.6rem,4vw,1.8rem)] font-xing text-gray-800">藏书阁</h1>
+    <button class="text-gray-700 focus:outline-none">
+      <i class="fa fa-ellipsis-v text-xl"></i>
+    </button>
+  </header>
+
+  <!-- 主内容滚动区 -->
+  <main class="relative z-20 pt-[100px] h-screen overflow-y-auto scroll-snap scrollbar-hide">
+    <!-- 第一页：起源 -->
+    <div class="h-[calc(100vh-60px)] flex overflow-hidden scroll-snap relative">
+      <!-- 左侧风筝图案：宽度从110%改为125%，最大高度从90%改为95%，实现放大 -->
+      <div class="w-full md:w-[75%] h-full p-2 md:p-4 m-0 relative overflow-hidden">
+        <img src="images/11.png" 
+             alt="风筝图案" 
+             class="absolute left-0 top-[10%] w-[130%] max-h-[100%] object-contain transition-opacity duration-1500">
+      </div>
+      
+      <!-- 右侧文字区域：缩小容器占比（w-[55%]），适配图片放大 -->
+      <div class="w-[55%] h-full p-4 md:p-6 flex flex-col justify-center">
+        <!-- 标题框 -->
+        <div class="mb-6 ml-auto">
+          <div class="border-2 border-kiteBlack px-2 py-3 inline-block bg-white/80">
+            <h2 class="text-[clamp(3rem,6vw,4.4rem)] font-xing text-kiteBlack font-bold vertical-text">
+              起源
+            </h2>
+          </div>
+        </div>
+        
+        <!-- 竖排正文（带背景色块）- 修复ml-[-20x]为ml-[-20px] -->
+        <div class="vertical-text-normal pl-0 flex-grow flex items-center">
+          <div class="bg-kiteTextBg px-20 py-10 rounded-lg border border-gray-200 shadow-sm ml-[-40px]">
+            <p class="text-[clamp(1.3rem,3vw,1.5rem)] font-kai text-gray-800 leading-loose mb-4">
+              风筝，古时称为「鹞」，北方谓「鸢」。
+            </p>
+            <p class="text-[clamp(1.3rem,3vw,1.5rem)] font-kai text-gray-800 leading-loose mb-4">
+              「鸢」，大多数的人认为风筝起源于
+            </p>
+            <p class="text-[clamp(1.3rem,3vw,1.5rem)] font-kai text-gray-800 leading-loose mb-4">
+              中国，然后广传于全世界，是一种
+            </p>
+            <p class="text-[clamp(1.3rem,3vw,1.5rem)] font-kai text-gray-800 leading-loose mb-4">
+              传统的民间工艺品。
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 下箭头：横向居中（通过绝对定位实现） -->
+      <button style="position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);" class="text-gray-600 focus:outline-none text-2xl">
+        <i class="fa fa-angle-down"></i>
+      </button>
+    </div>
+
+    <!-- 第二页：构造 -->
+    <div class="h-[calc(100vh-60px)] flex overflow-hidden scroll-snap relative">
+      <!-- 左侧风筝图案：宽度从115%改为130%，最大高度从95%改为100%，实现放大 -->
+      <div class="w-full md:w-[85%] h-full p-2 md:p-4 m-0 relative overflow-hidden">
+        <img src="images/22.png"
+             alt="风筝构造" 
+             class="absolute left-0 top-[10%] w-[130%] max-h-[100%] object-contain transition-opacity duration-1500">
+      </div>
+      
+      <!-- 右侧文字区域：缩小容器占比（w-[50%]），适配图片放大 -->
+      <div class="w-[50%] h-full p-4 md:p-6 flex flex-col justify-center">
+        <!-- 标题框 -->
+        <div class="mb-6 ml-auto">
+          <div class="border-2 border-kiteBlack px-3 py-4 inline-block bg-white/80">
+            <h2 class="text-[clamp(3rem,6vw,4.4rem)] font-xing text-kiteBlack font-bold vertical-text">
+              构造
+            </h2>
+          </div>
+        </div>
+        
+        <!-- 竖排正文（带背景色块） -->
+        <div class="vertical-text-normal pl-0 flex-grow flex items-center">
+          <div class="bg-kiteTextBg px-20 py-10 rounded-lg border border-gray-200 shadow-sm ml-[-40px]">
+            <p class="text-[clamp(1.3rem,3vw,1.5rem)] font-kai text-gray-800 leading-loose mb-4">
+              风筝的形状主要模仿大自然的生物，
+            </p>
+            <p class="text-[clamp(1.3rem,3vw,1.5rem)] font-kai text-gray-800 leading-loose mb-4">
+              如雀鸟、昆虫、动物、蝴蝶、飞鸟等。
+            </p>
+            <p class="text-[clamp(1.3rem,3vw,1.5rem)] font-kai text-gray-800 leading-loose mb-4">
+              体等，而图案方面，主要由个人喜好设
+            </p>
+            <p class="text-[clamp(1.3rem,3vw,1.5rem)] font-kai text-gray-800 leading-loose mb-4">
+              计，有宣传标志、动物、蝴蝶、飞鸟等。
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 上箭头：横向居中（通过绝对定位实现） -->
+      <button style="position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);" class="text-gray-600 focus:outline-none text-2xl">
+        <i class="fa fa-angle-up"></i>
+      </button>
+    </div>
+  </main>
+
+  <script>
+    // 图片加载动画
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.classList.add('opacity-0');
+        img.onload = () => {
+          img.classList.remove('opacity-0');
+        };
+        if (img.complete) {
+          img.classList.remove('opacity-0');
+        }
+      });
+    });
+
+    // 监听滚动，实现图片懒加载效果
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.classList.add('opacity-100');
+          observer.unobserve(img);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('img').forEach(img => {
+      observer.observe(img);
+    });
+  </script>
+</body>
+</html>
